@@ -1,0 +1,41 @@
+(.venv) msdocs-python-flask-webapp-quickstart >> az webapp up --runtime PYTHON:3.11 --name StartUpTest --sku B1 --logs        
+The webapp 'StartUpTest' doesn't exist
+Creating Resource group 'nobuyuki_kondou_rg_6533' ...
+Resource group creation complete
+Creating AppServicePlan 'nobuyuki_kondou_asp_4360' ...
+Creating webapp 'StartUpTest' ...
+Configuring default logging for the app, if not already enabled
+Creating zip with contents of dir D:\WORKTODAY2\FlaskSample4Azure\msdocs-python-flask-webapp-quickstart ...
+Getting scm site credentials for zip deployment
+Starting zip deployment. This operation can take a while to complete ...
+Deployment endpoint responded with status code 202
+You can launch the app at http://startuptest.azurewebsites.net
+Configuring default logging for the app, if not already enabled
+2023-10-23T07:22:22  Welcome, you are now connected to log-streaming service.
+Exception in thread Thread-1 (_get_log):
+Traceback (most recent call last):
+  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\urllib3/response.py", line 761, in _update_chunk_length
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\urllib3/response.py", line 444, in _error_catcher
+
+  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\urllib3/response.py", line 828, in read_chunked  
+  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\urllib3/response.py", line 765, in _update_chunk_length
+urllib3.exceptions.InvalidChunkLength: InvalidChunkLength(got length b'', 0 bytes read)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "threading.py", line 1016, in _bootstrap_inner
+  File "threading.py", line 953, in run
+  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\azure/cli/command_modules/appservice/custom.py", 
+line 2852, in _get_log
+  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\urllib3/response.py", line 624, in stream        
+  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\urllib3/response.py", line 816, in read_chunked  
+  File "contextlib.py", line 153, in __exit__
+  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\urllib3/response.py", line 461, in _error_catcher
+
+urllib3.exceptions.ProtocolError: ("Connection broken: InvalidChunkLength(got length b'', 0 bytes read)", InvalidChunkLength(got length b'', 0 bytes read))
