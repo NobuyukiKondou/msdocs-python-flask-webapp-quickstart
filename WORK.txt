@@ -1,41 +1,104 @@
-(.venv) msdocs-python-flask-webapp-quickstart >> az webapp up --runtime PYTHON:3.11 --name StartUpTest --sku B1 --logs        
-The webapp 'StartUpTest' doesn't exist
-Creating Resource group 'nobuyuki_kondou_rg_6533' ...
-Resource group creation complete
+(.venv) msdocs-python-flask-webapp-quickstart >> az webapp up --runtime PYTHON:3.11 --name StartUpTest --sku B1 --logs
+Webapp 'StartUpTest' already exists. The command will deploy contents to 
+the existing app.
 Creating AppServicePlan 'nobuyuki_kondou_asp_4360' ...
-Creating webapp 'StartUpTest' ...
-Configuring default logging for the app, if not already enabled
 Creating zip with contents of dir D:\WORKTODAY2\FlaskSample4Azure\msdocs-python-flask-webapp-quickstart ...
 Getting scm site credentials for zip deployment
 Starting zip deployment. This operation can take a while to complete ...
 Deployment endpoint responded with status code 202
 You can launch the app at http://startuptest.azurewebsites.net
 Configuring default logging for the app, if not already enabled
-2023-10-23T07:22:22  Welcome, you are now connected to log-streaming service.
-Exception in thread Thread-1 (_get_log):
-Traceback (most recent call last):
-  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\urllib3/response.py", line 761, in _update_chunk_length
-ValueError: invalid literal for int() with base 16: b''
+2023-10-24T00:15:24  Welcome, you are now connected to log-streaming service.
+Starting Log Tail -n 10 of existing logs ----
 
-During handling of the above exception, another exception occurred:
+/home/LogFiles/__lastCheckTime.txt  (https://startuptest.scm.azurewebsites.net/api/vfs/LogFiles/__lastCheckTime.txt)
 
-Traceback (most recent call last):
-  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\urllib3/response.py", line 444, in _error_catcher
+10/23/2023 23:38:52
 
-  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\urllib3/response.py", line 828, in read_chunked  
-  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\urllib3/response.py", line 765, in _update_chunk_length
-urllib3.exceptions.InvalidChunkLength: InvalidChunkLength(got length b'', 0 bytes read)
+/home/LogFiles/kudu/trace/711493e60ce7-3e0e1469-8817-4e08-b80a-714bd84acf5f.txt  (https://startuptest.scm.azurewebsites.net/api/vfs/LogFiles/kudu/trace/711493e60ce7-3e0e1469-8817-4e08-b80a-714bd84acf5f.txt)
 
-During handling of the above exception, another exception occurred:
+2023-10-23T07:20:46  Startup Request, url: /api/zipdeploy?isAsync=true, method: POST, type: request, pid: 87,1,7, ScmType: None, SCM_DO_BUILD_DURING_DEPLOYMENT: True
+/home/LogFiles/kudu/trace/711493e60ce7-6068673d-518f-4f79-8f2f-ca1ad6d41dbb.txt  (https://startuptest.scm.azurewebsites.net/api/vfs/LogFiles/kudu/trace/711493e60ce7-6068673d-518f-4f79-8f2f-ca1ad6d41dbb.txt)
 
-Traceback (most recent call last):
-  File "threading.py", line 1016, in _bootstrap_inner
-  File "threading.py", line 953, in run
-  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\azure/cli/command_modules/appservice/custom.py", 
-line 2852, in _get_log
-  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\urllib3/response.py", line 624, in stream        
-  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\urllib3/response.py", line 816, in read_chunked  
-  File "contextlib.py", line 153, in __exit__
-  File "D:\a\_work\1\s\build_scripts\windows\artifacts\cli\Lib\site-packages\urllib3/response.py", line 461, in _error_catcher
+   at System.IO.Enumeration.FileSystemEnumerableFactory.UserFiles(String 
+, String , EnumerationOptions )
 
-urllib3.exceptions.ProtocolError: ("Connection broken: InvalidChunkLength(got length b'', 0 bytes read)", InvalidChunkLength(got length b'', 0 bytes read))
+   at System.IO.Directory.InternalEnumeratePaths(String , String , SearchTarget , EnumerationOptions )
+   at System.IO.Directory.GetFiles(String , String , EnumerationOptions )
+   at System.IO.Directory.GetFiles(String , String , SearchOption )      
+   at Kudu.Services.Performance.LogStreamManager.GetFiles(String path, String ext) in /tmp/KuduLite/Kudu.Services/Diagnostics/LogStreamManager.cs:line 263
+   at Kudu.Services.Performance.LogStreamManager.Initialize(String path, 
+HttpContext context) in /tmp/KuduLite/Kudu.Services/Diagnostics/LogStreamManager.cs:line 309
+   at Kudu.Services.Performance.LogStreamManager.ProcessRequest(HttpContext context) in /tmp/KuduLite/Kudu.Services/Diagnostics/LogStreamManager.cs:line 123
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)     
+   at Kudu.Services.Web.Tracing.TraceMiddleware.Invoke(HttpContext context) in /tmp/KuduLite/Kudu.Services.Web/Tracing/TraceMiddleware.cs:line 95 
+2023-10-23T07:22:22    Error occurred, type: error, text: LogStreamManager: Inside Reset
+/home/LogFiles/2023_10_23_lw1sdlwk0000XN_default_docker.log  (https://startuptest.scm.azurewebsites.net/api/vfs/LogFiles/2023_10_23_lw1sdlwk0000XN_default_docker.log)
+2023-10-23T23:39:05.509508698Z Request for index page received
+2023-10-23T23:39:05.509560001Z 169.254.129.1 - - [23/Oct/2023:23:39:05 +0000] "GET / HTTP/1.1" 200 1469 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; 
+x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61"
+2023-10-23T23:39:05.771077515Z 169.254.129.1 - - [23/Oct/2023:23:39:05 +0000] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 0 "https://startuptest.azurewebsites.net/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61"
+2023-10-23T23:39:05.816591602Z 169.254.129.1 - - [23/Oct/2023:23:39:05 +0000] "GET /static/images/azure-icon.svg HTTP/1.1" 200 0 "https://startuptest.azurewebsites.net/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61"
+
+2023-10-23T23:39:11.068998069Z Request for hello page received with name=?????? ??????
+2023-10-23T23:39:11.069222482Z 169.254.129.1 - - [23/Oct/2023:23:39:11 +0000] "POST /hello HTTP/1.1" 200 812 "https://startuptest.azurewebsites.net/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61"
+2023-10-23T23:39:11.286536976Z 169.254.129.1 - - [23/Oct/2023:23:39:11 +0000] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0 "https://startuptest.azurewebsites.net/hello" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61"
+2023-10-23T23:39:11.302366944Z 169.254.129.1 - - [23/Oct/2023:23:39:11 +0000] "GET /static/images/azure-icon.svg HTTP/1.1" 304 0 "https://startuptest.azurewebsites.net/hello" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.61"
+/home/LogFiles/2023_10_23_lw1sdlwk0000XN_docker.log  (https://startuptest.scm.azurewebsites.net/api/vfs/LogFiles/2023_10_23_lw1sdlwk0000XN_docker.log)
+2023-10-23T07:49:58.092Z INFO  - Container startuptest_0_e70c2c95 for site startuptest initialized successfully and is ready to serve requests.   
+2023-10-23T23:38:53.189Z INFO  - 3.11_20230810.1.tuxprod Pulling from appsvc/python
+2023-10-23T23:38:53.208Z INFO  -  Digest: sha256:b20f97f273c1e7f04b68ed29ddbffca33e0993ff4ef07b02f80a211fef22c955
+2023-10-23T23:38:53.210Z INFO  -  Status: Image is up to date for mcr.microsoft.com/appsvc/python:3.11_20230810.1.tuxprod
+2023-10-23T23:38:53.239Z INFO  - Pull Image successful, Time taken: 0 Minutes and 0 Seconds
+2023-10-23T23:38:53.727Z INFO  - Starting container for site
+2023-10-23T23:38:53.728Z INFO  - docker run -d --expose=8000 --name startuptest_0_939c14ae -e WEBSITE_SITE_NAME=StartUpTest -e WEBSITE_AUTH_ENABLED=False -e WEBSITE_ROLE_INSTANCE_ID=0 -e WEBSITE_HOSTNAME=startuptest.azurewebsites.net -e WEBSITE_INSTANCE_ID=59d4b1ad6f6df484bc71c6a79202be2455d89138c28d8d565ed2bf4dd8a25032 -e HTTP_LOGGING_ENABLED=1 -e WEBSITE_USE_DIAGNOSTIC_SERVER=False appsvc/python:3.11_20230810.1.tuxprod
+
+2023-10-23T23:38:56.227Z INFO  - Initiating warmup request to container startuptest_0_939c14ae for site startuptest
+2023-10-23T23:39:05.298Z INFO  - Container startuptest_0_939c14ae for site startuptest initialized successfully and is ready to serve requests.   
+/home/LogFiles/2023_10_24_lw1sdlwk0000XN_default_docker.log  (https://startuptest.scm.azurewebsites.net/api/vfs/LogFiles/2023_10_24_lw1sdlwk0000XN_default_docker.log)
+2023-10-24T00:15:03.826053887Z Generating `gunicorn` command for 'app:app'
+2023-10-24T00:15:03.871857746Z Writing output script to '/opt/startup/startup.sh'
+2023-10-24T00:15:04.016956652Z Using packages from virtual environment antenv located at /tmp/8dbd4262863177e/antenv.
+2023-10-24T00:15:04.017399677Z Updated PYTHONPATH to '/opt/startup/app_logs:/tmp/8dbd4262863177e/antenv/lib/python3.11/site-packages'
+2023-10-24T00:15:06.039869735Z [2023-10-24 00:15:06 +0000] [73] [INFO] Starting gunicorn 20.1.0
+2023-10-24T00:15:06.071331192Z [2023-10-24 00:15:06 +0000] [73] [INFO] Listening at: http://0.0.0.0:8000 (73)
+2023-10-24T00:15:06.075732838Z [2023-10-24 00:15:06 +0000] [73] [INFO] Using worker: sync
+2023-10-24T00:15:06.095321731Z [2023-10-24 00:15:06 +0000] [76] [INFO] Booting worker with pid: 76
+2023-10-24T00:15:07.013066578Z 169.254.129.1 - - [24/Oct/2023:00:15:07 +0000] "GET /robots933456.txt HTTP/1.1" 404 207 "-" "HealthCheck/1.0"      
+
+/home/LogFiles/2023_10_24_lw1sdlwk0000XN_docker.log  (https://startuptest.scm.azurewebsites.net/api/vfs/LogFiles/2023_10_24_lw1sdlwk0000XN_docker.log)
+2023-10-24T00:14:55.417Z INFO  - 3.11_20230810.1.tuxprod Pulling from appsvc/python
+2023-10-24T00:14:55.432Z INFO  -  Digest: sha256:b20f97f273c1e7f04b68ed29ddbffca33e0993ff4ef07b02f80a211fef22c955
+2023-10-24T00:14:55.436Z INFO  -  Status: Image
+is up to date for mcr.microsoft.com/appsvc/python:3.11_20230810.1.tuxprod2023-10-24T00:14:55.465Z INFO  - Pull Image successful, Time taken: 0 Minutes and 0 Seconds
+2023-10-24T00:14:56.011Z INFO  - Starting container for site
+2023-10-24T00:14:56.011Z INFO  - docker run -d --expose=8000 --name startuptest_1_bf3962b9 -e WEBSITE_SITE_NAME=StartUpTest -e WEBSITE_AUTH_ENABLED=False -e WEBSITE_ROLE_INSTANCE_ID=0 -e WEBSITE_HOSTNAME=startuptest.azurewebsites.net -e WEBSITE_INSTANCE_ID=59d4b1ad6f6df484bc71c6a79202be2455d89138c28d8d565ed2bf4dd8a25032 -e HTTP_LOGGING_ENABLED=1 -e WEBSITE_USE_DIAGNOSTIC_SERVER=False appsvc/python:3.11_20230810.1.tuxprod
+
+2023-10-24T00:14:59.269Z INFO  - Initiating warmup request to container startuptest_1_bf3962b9 for site startuptest
+2023-10-24T00:15:07.003Z INFO  - Container startuptest_1_bf3962b9 for site startuptest initialized successfully and is ready to serve requests.   
+/home/LogFiles/AppServiceAppLogs_Feature_Installer/startup_0.log  (https://startuptest.scm.azurewebsites.net/api/vfs/LogFiles/AppServiceAppLogs_Feature_Installer/startup_0.log)
+2023-10-23 07:49:56,779  [MainThread] [DEBUG] : Initialized AppServiceAppLogging
+2023-10-23 07:49:57,564  [Thread-3 (] [DEBUG] : Waiting for the logs flag to be set
+2023-10-23 23:39:04,363  [MainThread] [DEBUG] : Initializating AppServiceAppLogging
+2023-10-23 23:39:04,364  [Thread-1 (] [DEBUG] : Did not find any previously bound socket
+2023-10-23 23:39:04,365  [MainThread] [DEBUG] : Initialized AppServiceAppLogging
+2023-10-23 23:39:04,867  [Thread-3 (] [DEBUG] : Waiting for the logs flag to be set
+2023-10-24 00:15:06,060  [MainThread] [DEBUG] : Initializating AppServiceAppLogging
+2023-10-24 00:15:06,069  [Thread-1 (] [DEBUG] : Did not find any previously bound socket
+2023-10-24 00:15:06,069  [MainThread] [DEBUG] : Initialized AppServiceAppLogging
+2023-10-24 00:15:06,630  [Thread-3 (] [DEBUG] : Waiting for the logs flag to be set
+/home/LogFiles/CodeProfiler/59d4b1_debug.log  (https://startuptest.scm.azurewebsites.net/api/vfs/LogFiles/CodeProfiler/59d4b1_debug.log)
+[2023_10_24_00_15_06] [appsvc_profiler.installer] [INFO] Code Profiler Installer is starting up
+[2023_10_24_00_15_06] [appsvc_profiler.installer] [INFO] Cleaning up any 
+existing status file which indicated signal handlers initialized status  
+[2023_10_24_00_15_06] [appsvc_profiler.installer] [INFO] Attempting to delete the signal_handler status file for instance id 59d4b1ad6f6df484bc71c6a79202be2455d89138c28d8d565ed2bf4dd8a25032
+[2023_10_24_00_15_06] [appsvc_profiler.installer] [INFO] successfully deleted the status file
+[2023_10_24_00_15_06] [appsvc_profiler.installer] [DEBUG] APPSETTING_WEBSITE_ENABLE_DEFAULT_CODE_PROFILER : None
+[2023_10_24_00_15_06] [appsvc_profiler.installer] [INFO] Attempting to install the default code profiler.
+[2023_10_24_00_15_06] [appsvc_profiler.installer] [DEBUG] viztracer would save traces to /tmp/59d4b1_profiler_trace.json
+[2023_10_24_00_15_06] [appsvc_profiler.installer] [INFO] Successfully installed code profiler.
+[2023_10_24_00_15_06] [appsvc_profiler.installer] [INFO] Signal Handlers 
+SIGUSR for needed code-profiler have been initialized for gunicorn process on instance 59d4b1ad6f6df484bc71c6a79202be2455d89138c28d8d565ed2bf4dd8a25032
+[2023_10_24_00_15_06] [appsvc_profiler.installer] [DEBUG] Code Profiler Installer is exiting as installation is completed
+Ending Log Tail of existing logs ---
+Starting Live Log Stream ---
