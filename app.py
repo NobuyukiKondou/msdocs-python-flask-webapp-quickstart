@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-   print('Request for index page received <<3>>')
+   print('Request for index page received <<4>>')
    return render_template('index.html')
 
 @app.route('/favicon.ico')
