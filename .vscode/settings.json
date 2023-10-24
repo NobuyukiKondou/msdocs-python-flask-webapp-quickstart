@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/faed12fa-3e55-4757-8f7d-19d9b07d9f30/resourceGroups/nobuyuki_kondou_rg_6533/providers/Microsoft.Web/sites/StartUpTest",
+    "appService.deploySubpath": "."
+}
